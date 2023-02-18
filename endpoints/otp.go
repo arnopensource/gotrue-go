@@ -18,7 +18,7 @@ const otpPath = "/otp"
 //
 // If CreateUser is true, the user will be automatically signed up if the user
 // doesn't exist.
-func (c *Client) OTP(req types.OTPRequest) error {
+func (c *Client) OTP(req types.OTPRequest, redirect string) error {
 	body, err := json.Marshal(req)
 	if err != nil {
 		return err
@@ -27,6 +27,12 @@ func (c *Client) OTP(req types.OTPRequest) error {
 	r, err := c.newRequest(otpPath, http.MethodPost, bytes.NewBuffer(body))
 	if err != nil {
 		return err
+	}
+
+	if redirect != "" {
+		q := r.URL.Query()
+		q.Add("redirect_to", redirect)
+		r.URL.RawQuery = q.Encode()
 	}
 
 	resp, err := c.client.Do(r)

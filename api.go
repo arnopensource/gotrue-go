@@ -198,7 +198,7 @@ type Client interface {
 	//
 	// If CreateUser is true, the user will be automatically signed up if the user
 	// doesn't exist.
-	OTP(req types.OTPRequest) error
+	OTP(req types.OTPRequest, redirect string) error
 
 	// GET /reauthenticate
 	//
