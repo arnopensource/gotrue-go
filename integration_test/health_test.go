@@ -5,8 +5,6 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-
-	"github.com/supabase-community/gotrue-go"
 )
 
 func TestHealth(t *testing.T) {

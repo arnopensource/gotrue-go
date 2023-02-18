@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/supabase-community/gotrue-go/types"
+	"github.com/arnopensource/gotrue-go/types"
 )
 
 var healthPath = "/health"

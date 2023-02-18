@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/supabase-community/gotrue-go/endpoints"
+	"github.com/arnopensource/gotrue-go/endpoints"
 )
 
 var (
